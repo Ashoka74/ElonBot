@@ -1,30 +1,25 @@
-# AI_Regulation
+pre-requirements :
+- git
+- pip 
+- python (3.8 for dependencies)
 
- <a href="https://www.youtube.com/watch?v=hrmZ-crQKcU&ab_channel=MarcoFernandez">View Demo</a>
- 
- 
- 
- 
+installation :
 
-The same than 
-<a href="https://github.com/Ashoka74/AI-Regulation-suggestions">the notebook</a>
-application but as a Django app
+$ git clone https://github.com/Ashoka74/ElonBot.git
+$ cd ../PATH_TO_FOLDER
+$ python -m pip install -r requirements.txt
 
-The app should work by itself, you just have to <strong> provide your OpenAI API </strong> and then enter the following command in the terminal from the folder path:
 
-<h3>
-manage.py runserver
-</h3>
+running :
 
-This command will open a Http window.
+- replace 'GPT3_API_KEY' by your personal key in views.py file
 
-If this doesn't work;
+$ manage.py runserver
+$ open the link or open http://127.0.0.1:8000/ in your browser
 
-try:
 
-<h3>
+If you are unable to run the app, try:
+
 manage.py makemigrations
-
 manage.py migrate
-
-</h3>
+manage.py runserver
