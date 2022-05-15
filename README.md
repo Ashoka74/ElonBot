@@ -1,3 +1,6 @@
+<h2>Elon Chatbot Installation</h2>
+
+
 pre-requirements :
 - [python 3.8](https://www.python.org/downloads/release/python-380/)
 - [pip](https://www.cours-gratuit.com/tutoriel-python/tutoriel-python-comment-travailler-avec-le-package-pip-en-python) 
@@ -24,9 +27,9 @@ manage.py runserver
 ```
 
 - open the link or open http://127.0.0.1:8000/ in your browser
+</br>
 
-
-If you are unable to run the app, try:
+If you are still unable to run the app, try:
 
 ```python
 manage.py makemigrations
