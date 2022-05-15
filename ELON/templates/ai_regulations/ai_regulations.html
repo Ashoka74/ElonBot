@@ -1,0 +1,97 @@
+
+<style>
+	.center {
+		margin: 0;
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	.center_page {
+		text-align:center;
+	}
+
+	.padding {
+		padding: 0px 0px 10px 0px;
+	}
+
+	input{
+		width: 70%;
+	}
+
+	.log_out {
+	text-align:right;
+	padding: 150px 0px 0px 100px;
+	}
+
+	.fixedButton{
+	position: fixed;
+	top: 500px;
+	bottom: 10px;
+	left: 700px;
+	right: 10px; 
+	padding: 20px;
+	}
+
+
+
+
+
+</style>
+
+
+
+
+<div class="center">
+
+	<div class="center_page">
+
+
+
+			
+
+		<br/>
+		<br>
+		<br/>
+		<h1>AI Elon</h1>
+
+		
+		<p>
+			<h2>
+				GPT-3 powered Elon Musk Chatbot
+			</h2>
+		</p>
+
+		
+		<br>
+		<br />
+
+	</div>
+
+		<h4>
+			Hi there, I'm Elon AI. I'm a chatbot that will answer all your questions.
+		</h4>
+	<form method="POST" action="#">
+		{% csrf_token %} 
+		<input maxlength="250" type="text" placeholder="Your input" name="ai_regulations_input"/>
+		<button type="submit" value="submit" style= 'width:90px'>Send</button>
+	</form>
+	<br/>
+	<br/>
+
+	<div>
+		<p>
+			
+				{% if answer and final_prompt and user_input %}
+				{% csrf_token %}
+				<h2>
+					User : {{user_input}} <br/> <br/>
+
+					Elon Musk : {{answer}}
+				</h2>
+				{% endif %}
+	
+		</p>
+		</div>
