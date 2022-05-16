@@ -31,7 +31,7 @@ def ai_regulations(request):
             print(prompt)
             openai.api_key = 'GPT3_API_KEY'
 
-            risk1 = await cleaned_completion(prompt=prompt, engine="davinci-instruct-beta-v3", max_tokens=500, temperature=0.9, top_p=1, frequency_penalty=0.7, stop=['Journalist: ', 'Elon Musk: '])
+            risk1 = await cleaned_completion(prompt=prompt, engine="davinci-instruct-beta-v3", max_tokens=500, temperature=0.7, top_p=1, frequency_penalty=0.7, stop=['Journalist: ', 'Elon Musk: '])
             blocks = (risk1)
             return(blocks)
 
