@@ -22,8 +22,8 @@ def ai_regulations(request):
         #user_input = input("What technology do you want to regulate? ")
         print(user_input)
 
-        prompt_examples = f"The following is an interview with Elon Musk. As always, Elon makes punchlines.\n\n Journalist: Welcome Elon! \n\n Elon Musk: Thank you! It's great to be here. \n\n "
-        new_input = f"Journalist: {user_input} \n\n Elon Musk:"
+        prompt_examples = f"The following is an interview with Elon Musk. As always, Elon makes punchlines.<br/> Journalist: Welcome Elon! \n\n Elon Musk: Thank you! It's great to be here. \n\n "
+        new_input = f"Journalist: {user_input} <br/> Elon Musk:"
 
         async def logic():
             new_prompt = str(final_prompt)
@@ -39,10 +39,15 @@ def ai_regulations(request):
 
         new_example = f"{new_input} {var}"
         print(new_example)
+        print(len(final_prompt))
         final_prompt.append(new_example)
+        print(len(final_prompt))
+        if len(final_prompt) > 6:
+            final_prompt.pop(0)
+        print(final_prompt)
 
         return render(request, './ai_regulations/ai_regulations.html', {'answer': var, 'final_prompt': final_prompt, 'user_input': user_input})
         # Return final_prompt as a string
-        # return HttpResponse(final_prompt)
+        # return render(request, './ai_regulations/ai_regulations.html', HttpResponse(final_prompt))
 
     return render(request, './ai_regulations/ai_regulations.html')
