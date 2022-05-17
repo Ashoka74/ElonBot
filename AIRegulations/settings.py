@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+import django_heroku
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,9 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '42(ts#-#7*n)h5mop#oyly9qq9@)$)2z*sg$bky^krc+en8(09'
+
+env_path = Path(BASE_DIR / 'AIRegulations' / '.env')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
+load_dotenv(dotenv_path=env_path)
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -121,3 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+django_heroku.settings(locals())
